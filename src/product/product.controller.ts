@@ -37,9 +37,7 @@ export class ProductController {
   @Get('/')
   async getProducts (@Res() res) {
     const products = await this.productService.getProducts()
-    return res.status(HttpStatus.OK).json({
-      data: products,
-    });
+    return res.status(HttpStatus.OK).json(products);
   }
 
   // Obtener un producto por ID
@@ -51,9 +49,7 @@ export class ProductController {
 
     if(!product) throw new NotFoundException('Producto inexistente')
 
-    return res.status(HttpStatus.OK).json({
-      data: product,
-    });
+    return res.status(HttpStatus.OK).json(product);
   }
 
   // Editar producto 
@@ -82,7 +78,7 @@ export class ProductController {
     if(!productDeleted) throw new NotFoundException('Producto inexistente')
 
     return res.status(HttpStatus.OK).json({
-      message: "PRODUCTO ELIMINAOD",
+      message: "PRODUCTO ELIMINADO",
       data: productDeleted
     });
   }
