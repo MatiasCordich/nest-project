@@ -14,8 +14,8 @@ async function bootstrap() {
 
   app.enableCors({
     allowedHeaders: "*",
-    origin: "https://product-list-angular-eight.vercel.app",
-    methods: ["POST", "PUT", "DELETE", "GET"],
+    origin: "*",
+    methods: ["POST", "PUT", "DELETE", "GET", "OPTIONS"],
     credentials: true,
   });
 
